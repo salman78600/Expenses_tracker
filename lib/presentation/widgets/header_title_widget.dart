@@ -10,12 +10,12 @@ class HeaderTitleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title!, style: Appstyle.titleText),
-          Text(viewTitle!, style: Appstyle.bodyText),
+          Text(title!, style: titleText),
+          Text(viewTitle!, style: bodyText),
         ],
       ),
     );

@@ -7,8 +7,24 @@ class ExpenseLoading extends ExpenseState {}
 
 class ExpenseLoaded extends ExpenseState {
   final List<Expense> expenses;
+  final double weeklyTotal;
+  final double monthlyTotal;
+  final String mostExpensiveCategory;
+  final double mostExpensiveCategoryTotal;
 
-  ExpenseLoaded(this.expenses);
+  ExpenseLoaded(
+    this.expenses,
+    this.weeklyTotal,
+    this.monthlyTotal,
+    this.mostExpensiveCategory,
+    this.mostExpensiveCategoryTotal,
+  );
+}
+
+class ExpenseLoadedByDate extends ExpenseState {
+  final List<Expense> expenses;
+
+  ExpenseLoadedByDate(this.expenses);
 }
 
 class ExpenseSuccess extends ExpenseState {

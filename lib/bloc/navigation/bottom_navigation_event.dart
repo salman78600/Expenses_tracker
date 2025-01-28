@@ -1,7 +1,7 @@
 part of 'bottom_navigation_bloc.dart';
 
 @immutable
-abstract class NavigationEvent {}
+sealed class NavigationEvent {}
 
 class NavigateToHome extends NavigationEvent {}
 

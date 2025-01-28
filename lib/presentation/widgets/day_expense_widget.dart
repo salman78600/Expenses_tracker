@@ -1,11 +1,11 @@
 import 'package:expenses_tracker/utils/app_style.dart';
 import 'package:flutter/material.dart';
 
-class TodayExpensesCard extends StatelessWidget {
+class DayExpenseWidget extends StatelessWidget {
   final double expenses;
   final VoidCallback onAddPressed;
 
-  const TodayExpensesCard({
+  const DayExpenseWidget({
     super.key,
     required this.expenses,
     required this.onAddPressed,
@@ -20,7 +20,7 @@ class TodayExpensesCard extends StatelessWidget {
       ),
       elevation: 1.0,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 22.0),
+        padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -29,13 +29,13 @@ class TodayExpensesCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Today\'s Expenses',
-                  style: Appstyle.titleTextWhite,
+                  'Day Expenses',
+                  style: titleTextWhite,
                 ),
                 SizedBox(height: 8.0),
                 Text(
                   '€${expenses.toStringAsFixed(2)}',
-                  style: Appstyle.titleTextWhite22,
+                  style: titleTextWhite22,
                 ),
               ],
             ),

@@ -1,20 +1,24 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
-class AppDatabase {
-  // Private constructor
-  AppDatabase._privateConstructor();
+/*
+  AppDatabase class
+  - Singleton class to manage the database instance
+  - Initialize the database and create table
+  - Return the database instance
+  - Usage:
+    - final db = await AppDatabase.instance.database;
+*/
 
-  // Singleton instance
+class AppDatabase {
+  AppDatabase._privateConstructor();
   static final AppDatabase instance = AppDatabase._privateConstructor();
 
   // Database instance
   static Database? _appDatabase;
 
-  // Getter for database instance
   Future<Database> get database async {
     if (_appDatabase != null) return _appDatabase!;
-
     // If database doesn't exist, initialize it
     _appDatabase = await _initDatabase();
     return _appDatabase!;
@@ -24,9 +28,6 @@ class AppDatabase {
   Future<Database> _initDatabase() async {
     String dbPath = await getDatabasesPath();
     String path = join(dbPath, 'app_database.db');
-    print("path");
-    print(path);
-
     return await openDatabase(
       path,
       version: 1,
@@ -41,7 +42,8 @@ class AppDatabase {
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       amount DOUBLE,
       description TEXT DEFAULT NULL,
-      date TEXT)
+      date TEXT,
+      category TEXT)
       ''');
   }
 }

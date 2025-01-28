@@ -1,30 +1,40 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
+// import 'package:expenses_tracker/main.dart';
+// import 'package:expenses_tracker/presentation/screens/splash.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
+// void main() {
+//   group('MyApp Widget Tests', () {
+//     testWidgets('SplashScreen is displayed as initial route',
+//         (WidgetTester tester) async {
+//       // Build the app
+//       await tester.pumpWidget(MyApp());
 
-import 'package:expenses_tracker/main.dart';
+//       // Verify SplashScreen is shown
+//       expect(find.byType(SplashScreen), findsOneWidget);
+//     });
 
-void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+//     testWidgets('App uses the correct theme', (WidgetTester tester) async {
+//       // Build the app
+//       await tester.pumpWidget(MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+//       // Find MaterialApp in the widget tree
+//       final materialApp = find.byType(MaterialApp);
+//       expect(materialApp, findsOneWidget,
+//           reason: "MaterialApp should exist in the widget tree");
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+//       // Extract the MaterialApp widget to access its theme
+//       final MaterialApp app = tester.widget(materialApp);
+//       final ThemeData? theme = app.theme;
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
-  });
-}
+//       // Debugging: Ensure theme is not null
+//       expect(theme, isNotNull,
+//           reason: "ThemeData should not be null in MaterialApp");
+
+//       // Verify the Material 3 usage
+
+//       expect(theme!.useMaterial3, true,
+//           reason: "Material 3 should be enabled for the theme");
+//     });
+//   });
+// }

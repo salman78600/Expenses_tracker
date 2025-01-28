@@ -1,11 +1,14 @@
-import 'package:flutter/src/widgets/icon_data.dart';
+import 'package:flutter/material.dart';
 
+/*
+** Category model class
+*/
 class Category {
-  final int? id;
-  final String title;
-  final IconData icon;
+  int id;
+  String title;
+  IconData icon;
 
-  Category({this.id, required this.title, required this.icon});
+  Category({required this.id, required this.title, required this.icon});
 
   Map<String, dynamic> toMap() {
     return {

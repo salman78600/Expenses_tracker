@@ -11,3 +11,15 @@ class AddExpense extends ExpenseEvent {
 }
 
 class GetExpenses extends ExpenseEvent {}
+
+class FilterExpensesByDate extends ExpenseEvent {
+  final String? date;
+  FilterExpensesByDate(this.date);
+}
+
+class DeleteExpenseEvent extends ExpenseEvent {
+  final String id;
+  final String date;
+
+  DeleteExpenseEvent(this.id, this.date);
+}
