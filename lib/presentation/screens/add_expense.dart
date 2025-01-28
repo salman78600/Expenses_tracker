@@ -47,7 +47,6 @@ class AddExpenseScreen extends StatelessWidget {
                   ),
                 );
               } else if (state is ExpenseError) {
-                print(state.error);
                 showSnackBar(context, state.error);
               }
             },
@@ -114,7 +113,6 @@ class AddExpenseScreen extends StatelessWidget {
                         );
                         dateController.text =
                             DateFormat("dd-MM-yyyy").format(selectedDate!);
-                        print(selectedDate);
                       },
                       validator: (value) {
                         if (value == null || value.isEmpty) {

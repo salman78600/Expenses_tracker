@@ -26,7 +26,6 @@ class CategoryList extends StatelessWidget {
                   return GestureDetector(
                     onTap: () {
                       // Dispatch the category selection event
-                      print('Selected category: ${category.title}');
                       context
                           .read<CategoryBloc>()
                           .add(CategorySelected(category));

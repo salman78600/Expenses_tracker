@@ -10,7 +10,6 @@ class HeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('HeaderWidget is being rendered');
     return Padding(
       key: const Key('header_widget'),
       padding: const EdgeInsets.symmetric(horizontal: 5),
